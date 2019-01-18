@@ -23,7 +23,11 @@ module.exports = {
         { flag: 'a' },
         function(err) {
           if (err) {
-            res.send('Got a bad POST request!', err);
+            res.send(
+              `Got a bad POST request! Here's the error - ${JSON.stringify(
+                err
+              )}`
+            );
           } else {
             res.send(
               `Hey ${req.body.name}, thanks for completing the assignment!`
