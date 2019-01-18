@@ -16,18 +16,21 @@ module.exports = {
       !cohorts.includes(cohort)
     ) {
       res.send('Got a bad POST request!');
-    }
-    fs.writeFile(
-      `./data/${cohort}.txt`,
-      `\n${name} - ${message}\n`,
-      { flag: 'a' },
-      function(err) {
-        if (err) {
-          res.send('Got a bad POST request!');
-        }
+    } else {
+      fs.writeFile(
+        `./data/${cohort}.txt`,
+        `\n${name} - ${message}\n`,
+        { flag: 'a' },
+        function(err) {
+          if (err) {
+            res.send('Got a bad POST request!');
+          }
 
-        res.send(`Hey ${req.body.name}, thanks for completing the assignment!`);
-      }
-    );
+          res.send(
+            `Hey ${req.body.name}, thanks for completing the assignment!`
+          );
+        }
+      );
+    }
   }
 };
