@@ -15,7 +15,7 @@ module.exports = {
       typeof message !== 'string' ||
       !cohorts.includes(cohort)
     ) {
-      res.send('Got a bad POST request!');
+      res.send('Invalid POST request!');
     } else {
       fs.writeFile(
         `./data/${cohort}.txt`,
@@ -23,7 +23,7 @@ module.exports = {
         { flag: 'a' },
         function(err) {
           if (err) {
-            res.send('Got a bad POST request!');
+            res.send('Got a bad POST request!', err);
           } else {
             res.send(
               `Hey ${req.body.name}, thanks for completing the assignment!`
