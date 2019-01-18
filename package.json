@@ -1,0 +1,15 @@
+{
+  "name": "simple-node-server",
+  "version": "1.0.0",
+  "description": "a simple node server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Nicholas Vincent-Hill",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
