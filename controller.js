@@ -24,11 +24,11 @@ module.exports = {
         function(err) {
           if (err) {
             res.send('Got a bad POST request!');
+          } else {
+            res.send(
+              `Hey ${req.body.name}, thanks for completing the assignment!`
+            );
           }
-
-          res.send(
-            `Hey ${req.body.name}, thanks for completing the assignment!`
-          );
         }
       );
     }
