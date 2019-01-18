@@ -11,4 +11,8 @@ app.set('port', process.env.PORT || 8080);
 
 app.use('/api', routes);
 
+app.use((req, res) => {
+  res.sendStatus(400);
+});
+
 module.exports = app;
