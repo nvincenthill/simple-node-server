@@ -2,9 +2,10 @@ const fs = require('fs');
 
 module.exports = {
   get: (req, res) => {
-    console.log('getting data');
+    res.send("Ugh... that's the wrong request type :(");
   },
   post: (req, res) => {
-    console.log('getting data');
+    console.log(req.body);
+    res.send('Got a POST request!');
   }
 };
